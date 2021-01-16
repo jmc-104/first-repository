@@ -1,8 +1,12 @@
-echo "# first-repository" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/jmc-104/first-repository.git
-git push -u origin main
-                
+
+  cancelPreview	POST  /project/global/deployments/deployment/cancelPreview	Cancels and removes the preview currently associated with the deployment.
+delete	DELETE  /project/global/deployments/deployment	Deletes a deployment and all of the resources in the deployment.
+get	GET  /project/global/deployments/deployment	Gets information about a specific deployment.
+getIamPolicy	GET  /project/global/deployments/resource/getIamPolicy	Gets the access control policy for a resource. May be empty if no such policy or resource exists.
+insert	POST  /project/global/deployments	Creates a deployment and all of the resources described by the deployment manifest.
+list	GET  /project/global/deployments	Lists all deployments for a given project.
+patch	PATCH  /project/global/deployments/deployment	Patches a deployment and all of the resources described by the deployment manifest. This method supports patch semantics.
+setIamPolicy	POST  /project/global/deployments/resource/setIamPolicy	Sets the access control policy on the specified resource. Replaces any existing policy.
+stop	POST  /project/global/deployments/deployment/stop	Stops an ongoing operation. This does not roll back any work that has already been completed, but prevents any new work from being started.
+testIamPermissions	POST  /project/global/deployments/resource/testIamPermissions	Returns permissions that a caller has on the specified resource.
+update	PUT  /project/global/deployments/deployment              
