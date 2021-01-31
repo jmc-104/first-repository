@@ -1,12 +1,67 @@
-
-  cancelPreview	POST  /project/global/deployments/deployment/cancelPreview	Cancels and removes the preview currently associated with the deployment.
-delete	DELETE  /project/global/deployments/deployment	Deletes a deployment and all of the resources in the deployment.
-get	GET  /project/global/deployments/deployment	Gets information about a specific deployment.
-getIamPolicy	GET  /project/global/deployments/resource/getIamPolicy	Gets the access control policy for a resource. May be empty if no such policy or resource exists.
-insert	POST  /project/global/deployments	Creates a deployment and all of the resources described by the deployment manifest.
-list	GET  /project/global/deployments	Lists all deployments for a given project.
-patch	PATCH  /project/global/deployments/deployment	Patches a deployment and all of the resources described by the deployment manifest. This method supports patch semantics.
-setIamPolicy	POST  /project/global/deployments/resource/setIamPolicy	Sets the access control policy on the specified resource. Replaces any existing policy.
-stop	POST  /project/global/deployments/deployment/stop	Stops an ongoing operation. This does not roll back any work that has already been completed, but prevents any new work from being started.
-testIamPermissions	POST  /project/global/deployments/resource/testIamPermissions	Returns permissions that a caller has on the specified resource.
-update	PUT  /project/global/deployments/deployment              
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: python38standardenv
+  namespace: '36781484335'
+  selfLink: /apis/serving.knative.dev/v1/namespaces/36781484335/services/python38standardenv
+  uid: 6f1e6bb4-fbf2-4abf-b170-f31490ed4098
+  resourceVersion: AAW6OMunebk
+  generation: 2
+  creationTimestamp: '2021-01-31T21:18:09.797867Z'
+  labels:
+    managed-by: gcp-cloud-build-deploy-cloud-run
+    gcb-trigger-id: 3dcb9eca-0ebe-42ac-8c65-cf8960640632
+    cloud.googleapis.com/location: northamerica-northeast1
+  annotations:
+    run.googleapis.com/client-name: cloud-console
+    serving.knative.dev/creator: info@natureseccentricity.com
+    serving.knative.dev/lastModifier: info@natureseccentricity.com
+    client.knative.dev/user-image: gcr.io/cloudrun/placeholder
+    run.googleapis.com/launch-stage: BETA
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+spec:           
+template:
+    metadata:
+      name: python38standardenv-placeholder
+      annotations:
+        run.googleapis.com/client-name: cloud-console
+        autoscaling.knative.dev/maxScale: '100'
+        run.googleapis.com/sandbox: gvisor
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      serviceAccountName: 36781484335-compute@developer.gserviceaccount.com
+      containers:
+      - image: gcr.io/cloudrun/placeholder
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 256Mi
+  traffic:
+  - percent: 100
+    latestRevision: true
+    status:
+  observedGeneration: 2
+  conditions:
+  - type: Ready
+    status: 'True'
+    lastTransitionTime: '2021-01-31T21:19:41.238713Z'
+  - type: ConfigurationsReady
+    status: 'True'
+    lastTransitionTime: '2021-01-31T21:19:41.146398Z'
+  - type: RoutesReady
+    status: 'True'
+    lastTransitionTime: '2021-01-31T21:19:41.238713Z'
+    latestReadyRevisionName: python38standardenv-placeholder
+  latestCreatedRevisionName: python38standardenv-placeholder
+  traffic:
+  - revisionName: python38standardenv-placeholder
+    percent: 100
+    latestRevision: true
+  url: https://python38standardenv-47daldhvra-nn.a.run.app
+  address:
+    url: https://python38standardenv-47daldhvra-nn.a.run.app
+    
